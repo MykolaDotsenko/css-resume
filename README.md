@@ -1,6 +1,6 @@
 # CSS Resume — Mykola Dotsenko
 
-A small, static resume site built with HTML and CSS.
+A static resume page built with plain HTML and CSS.
 
 **Live:** https://mykoladotsenko.github.io/css-resume/
 
@@ -8,77 +8,89 @@ A small, static resume site built with HTML and CSS.
 [LinkedIn](https://www.linkedin.com/in/mykola-dotsenko/) ·
 [GitHub](https://github.com/MykolaDotsenko)
 
-This repository originally started as a CSS exercise. I kept the no-framework setup because a resume does not need an application runtime, then rebuilt the content around the work I actually do now.
+This repo started as an early CSS exercise. I kept the static setup and rebuilt the page around the work I do now instead of turning it into another framework demo.
 
-## What the resume focuses on
+## What is on the page
 
 My current work is mostly Python/Django backend and data work:
 
 - Django, DRF, Wagtail, PostgreSQL, SQL, and Django ORM
-- CRM and external API integrations
-- data reconciliation and identity resolution
+- Kivi, OviPro, HubSpot, and other external integrations
+- CRM reconciliation and identity matching
 - synchronization and document workflows
 - search/query performance
 - production debugging
-- React, Next.js, TypeScript, JavaScript, and HTMX when frontend work is part of the feature
-- LLM-backed features where model output is checked and bounded by normal application logic
+- React, Next.js, TypeScript, JavaScript, and HTMX when the same feature needs frontend work
+- LLM-backed features where model output is checked by normal application logic
 
-The Techco / Bo section includes concrete examples from production work, including Kivi, OviPro, and HubSpot flows at roughly 200k-record scale and a search path reduced from about 3.5 seconds to about 300 ms.
+The resume includes a few concrete examples from Bo, including CRM work at roughly 200k-contact scale and one search path reduced from about 3.5 seconds to about 300 ms.
 
-## Selected projects
+## Projects shown
 
 ### [DomoNest](https://github.com/MykolaDotsenko/domonest)
 
 **Python · Django · Wagtail · PostgreSQL**
 
-A household app where pantry, recipes, shopping, and recurring tasks share the same state. The interesting part is keeping those flows consistent without duplicating data across screens.
+A household app where pantry, recipes, shopping, and recurring tasks share data instead of behaving like unrelated CRUD screens.
 
 ### [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter)
 
 **Django · PostgreSQL · HTMX · Redis**
 
-A travel-money app that keeps exchange-rate sources and effective dates visible. Optional AI and media features can fail without breaking the core conversion flow.
+A travel-money app with current and historical FX rates. The core conversion still works when optional AI or enrichment providers are unavailable.
 
 ### [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion)
 
 **React · TypeScript · Zod · PWA**
 
-A local-first shopping budget app. Money uses integer minor units, local data is versioned, and barcode/OCR/image-recognition results must be confirmed before they enter the normal shopping flow.
+A local-first shopping budget app with exact-money arithmetic, versioned browser storage, offline use, and barcode/OCR/image-recognition helpers.
 
 ### [JunaLippu](https://github.com/MykolaDotsenko/JunaLippu)
 
 **Next.js · TypeScript · tRPC · Prisma**
 
-A railway booking case study with route-segment inventory and database rules that prevent overbooking when requests arrive concurrently.
+A Finnish rail-booking demo with segment-level seat inventory and database protection against concurrent overbooking.
 
-## Why plain HTML and CSS?
+### [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures)
 
-Because that is enough for this page.
+**React · GTFS/SIRI · PWA · Playwright**
 
-There is no client-side state, no form workflow, and no interactive application logic to justify React or another runtime framework. The production site therefore ships:
+A Turku transit PWA that deals with stale live data, repeated stops, poor GPS, offline use, and GTFS/SIRI timing edge cases.
+
+[Live demo](https://mykoladotsenko.github.io/foli-live-departures/)
+
+### [Tradeoff — Decision Lab](https://github.com/MykolaDotsenko/tradeoff-decision-lab)
+
+**React · TypeScript · Zod · Vercel**
+
+A comparison tool that keeps score, confidence, and sensitivity separate. AI can help prepare inputs, but the ranking stays deterministic.
+
+[Live demo](https://tradeoff-decision-lab.vercel.app/)
+
+## Implementation
+
+There is no client-side state or form workflow here, so the site does not need React or another runtime framework.
+
+It uses:
 
 - semantic HTML
 - responsive CSS
-- CSS Grid and Flexbox
+- Grid and Flexbox
 - keyboard focus styles
 - reduced-motion and forced-colors support
-- print rules for A4
+- A4 print rules
 - no runtime JavaScript
 - no runtime dependencies
 
 ## Checks
 
-The repository still has automated checks because a static site can break too.
-
-### Static validation
+Static validation:
 
 ```bash
 python scripts/check_site.py
 ```
 
-This checks metadata, local links, IDs, image alt text, external-link safety, required sections, and the CSS rules used for print and accessibility.
-
-### Browser tests
+Browser, accessibility, and print tests:
 
 ```bash
 npm install
@@ -86,7 +98,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Playwright checks desktop and mobile layouts, horizontal overflow, important links and resume content, serious/critical axe violations, print styles, and A4 PDF generation.
+The Playwright suite checks desktop/mobile layout, important links and content, horizontal overflow, serious/critical axe violations, print styles, and A4 PDF generation.
 
 ## Local preview
 
@@ -94,7 +106,11 @@ Playwright checks desktop and mobile layouts, horizontal overflow, important lin
 python -m http.server 8000
 ```
 
-Open http://127.0.0.1:8000/
+Then open:
+
+```text
+http://127.0.0.1:8000/
+```
 
 ## Author
 
