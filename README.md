@@ -51,6 +51,18 @@ A local-first shopping budget app. Money uses integer minor units, local data is
 
 A railway booking case study with route-segment inventory and database rules that prevent overbooking when requests arrive concurrently.
 
+### [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures)
+
+**React · GTFS/SIRI · PWA · Playwright**
+
+A Turku transit PWA that distinguishes live, scheduled, stale, and unknown data and handles GPS, repeated-stop, offline, and timetable edge cases. [Live demo](https://mykoladotsenko.github.io/foli-live-departures/).
+
+### [Tradeoff — Decision Lab](https://github.com/MykolaDotsenko/tradeoff-decision-lab)
+
+**React · TypeScript · Zod · Vercel**
+
+A decision workspace that keeps preference score, evidence confidence, and sensitivity separate. AI can structure inputs, while the ranking stays deterministic. [Live demo](https://tradeoff-decision-lab.vercel.app/).
+
 ## Why plain HTML and CSS?
 
 Because that is enough for this page.
