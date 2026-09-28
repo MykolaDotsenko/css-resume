@@ -7,9 +7,9 @@
     <title>Mykola Dotsenko — Backend & Data Software Engineer</title>
     <meta
       name="description"
-      content="Mykola Dotsenko — Software Engineer in Turku working mainly with Python/Django, backend integrations, PostgreSQL, data reconciliation, and full-stack web products.">
+      content="Mykola Dotsenko — Software Engineer in Turku working with Python/Django, PostgreSQL, CRM and API integrations, search, documents, and full-stack web features.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#edf2f7">
+    <meta name="theme-color" content="#dfe1dc">
 
     <link rel="canonical" href="https://mykoladotsenko.github.io/css-resume/">
 
@@ -50,15 +50,14 @@
             <p class="eyebrow">Software Engineer · Turku, Finland</p>
             <h1>Mykola Dotsenko</h1>
             <p class="headline">
-              Python/Django backend, integrations,
-              <span>and data-heavy product work.</span>
+              Python/Django backend work,
+              <span>with a lot of data moving between systems.</span>
             </p>
             <p class="summary">
-              I work mostly on backend and data problems: Django applications,
-              external APIs, CRM synchronization, search, document flows, and the
-              awkward cases where two systems disagree. Python/Django is my main stack,
-              but I also ship frontend work with React, Next.js, TypeScript, and HTMX
-              when that is the practical way to finish a feature.
+              Most of my current work is Django backend, PostgreSQL, CRM and API integrations,
+              search, and document flows. A lot of the hard cases are not algorithmic;
+              they are about figuring out which system is right when two sources disagree.
+              I also work in React, Next.js, TypeScript, and HTMX when the same feature needs frontend work.
             </p>
 
             <nav class="profile-links" aria-label="Professional profiles">
@@ -117,22 +116,22 @@
 
         <section class="impact-band" aria-labelledby="impact-heading">
           <div class="impact-intro">
-            <p class="section-label">From current work</p>
-            <h2 id="impact-heading">Some numbers from production</h2>
+            <p class="section-label">Current work</p>
+            <h2 id="impact-heading">A few numbers</h2>
           </div>
 
           <div class="metric-grid">
             <article class="metric">
               <strong>~200k</strong>
-              <p>Contacts handled in the Kivi/OviPro/HubSpot CRM work.</p>
+              <p>Contacts in the Kivi/OviPro/HubSpot CRM work.</p>
             </article>
             <article class="metric">
               <strong>3 sources</strong>
-              <p>Kivi, OviPro, and HubSpot in one reconciliation flow.</p>
+              <p>Kivi, OviPro, and HubSpot in the same CRM flow.</p>
             </article>
             <article class="metric">
               <strong>3.5s → ~300ms</strong>
-              <p>Search latency after query and Django ORM work.</p>
+              <p>Search latency after changing the query path and ORM usage.</p>
             </article>
           </div>
         </section>
@@ -141,11 +140,11 @@
           <aside class="sidebar" aria-label="Technical and education summary">
             <section class="sidebar-section" aria-labelledby="focus-heading">
               <p class="section-label">Focus</p>
-              <h2 id="focus-heading">What I work on most</h2>
+              <h2 id="focus-heading">Main areas</h2>
               <ul class="compact-list">
                 <li>Django backend &amp; APIs</li>
-                <li>Data reconciliation</li>
-                <li>Identity resolution</li>
+                <li>CRM reconciliation</li>
+                <li>Identity matching</li>
                 <li>CRM &amp; external integrations</li>
                 <li>Production debugging</li>
                 <li>Search, documents &amp; workflows</li>
@@ -201,12 +200,11 @@
 
             <section class="sidebar-section sidebar-section-last" aria-labelledby="background-heading">
               <p class="section-label">Before software</p>
-              <h2 id="background-heading">Agriculture, accounting &amp; operations</h2>
+              <h2 id="background-heading">Work before software</h2>
               <p class="sidebar-copy">
-                Before moving into software I worked in agriculture, greenhouse and food
-                production, accounting, sales, and customer-facing roles. That experience
-                is useful when a product has to match an actual operating process, not just
-                a clean diagram.
+                Before software I worked in agriculture, greenhouse and food production,
+                accounting, sales, and customer-facing roles. That background still helps
+                when I have to understand a workflow before I can change the software behind it.
               </p>
             </section>
           </aside>
@@ -228,32 +226,31 @@
 
                   <div class="experience-body">
                     <p class="experience-lede">
-                      At Bo I work on backend and data-heavy features across CRM,
-                      real-estate, document, search, API, and AI-assisted workflows.
+                      At Bo I work on CRM, real-estate data, search, documents, APIs,
+                      and the backend/frontend pieces around those features.
                     </p>
                     <ul class="detail-list">
                       <li>
-                        Built and evolved a CRM golden customer view across Kivi, OviPro,
+                        Built and maintained a CRM golden customer view across Kivi, OviPro,
                         and HubSpot at roughly 200k-record scale.
                       </li>
                       <li>
-                        For identity matching, I use conservative rules and send ambiguous
-                        cases to review instead of auto-merging people who only happen to
-                        share an email, phone number, or similar details.
+                        For identity matching, ambiguous cases go to review instead of being
+                        auto-merged just because two records share an email, phone number,
+                        or similar details.
                       </li>
                       <li>
-                        Worked on synchronization and reconciliation for customer, property,
-                        and document data. For production incidents, I normally trace the
-                        source data first and verify the affected scope before changing code.
+                        Worked on customer, property, and document sync. When production data
+                        looks wrong, I check the source records and how many objects are
+                        affected before changing the code.
                       </li>
                       <li>
                         Cut one search path from 3.5s to about 300ms by changing query
                         structure, relationship loading, candidate limits, and caching.
                       </li>
                       <li>
-                        Also ship Wagtail/DRF/HTMX/JavaScript work, PDF and document
-                        features, external API integrations, and bounded AI features in the
-                        same product.
+                        Also ship Wagtail/DRF/HTMX/JavaScript work, PDF/document features,
+                        external API integrations, and AI-assisted features in the same product.
                       </li>
                     </ul>
                   </div>
@@ -268,9 +265,8 @@
 
                   <div class="experience-body">
                     <p>
-                      SaaS delivery with Next.js and TypeScript, reusable UI,
-                      PostgreSQL/Supabase-backed workflows, and full-text/semantic
-                      search exploration.
+                      Built SaaS features with Next.js and TypeScript, reusable UI,
+                      PostgreSQL/Supabase workflows, and full-text/semantic search experiments.
                     </p>
                   </div>
                 </article>
@@ -284,9 +280,8 @@
 
                   <div class="experience-body">
                     <p>
-                      CRM frontend workflows with React, TanStack Query/Table,
-                      REST API integration, responsive UX, edge-case handling,
-                      and Playwright E2E testing.
+                      Built CRM screens with React and TanStack Query/Table, connected them
+                      to REST APIs, handled loading/error cases, and added Playwright E2E tests.
                     </p>
                   </div>
                 </article>
@@ -300,9 +295,8 @@
 
                   <div class="experience-body">
                     <p>
-                      Full-stack project work with Next.js, TypeScript, tRPC,
-                      Prisma, authentication, testing, deployment, Agile/Scrum,
-                      and AWS fundamentals.
+                      Full-stack project work with Next.js, TypeScript, tRPC, Prisma,
+                      authentication, testing, deployment, Agile/Scrum, and AWS basics.
                     </p>
                   </div>
                 </article>
@@ -333,9 +327,8 @@
                   </div>
                   <p>
                     A Django household app where pantry, recipes, shopping, and recurring
-                    tasks share the same underlying state. I use database constraints,
-                    derived views, and idempotent writes instead of duplicating data across
-                    separate screens.
+                    tasks share data. Database constraints and derived views keep those
+                    features from drifting apart.
                   </p>
                   <a
                     href="https://github.com/MykolaDotsenko/domonest"
@@ -352,9 +345,9 @@
                     <span>Django · PostgreSQL · HTMX · Redis</span>
                   </div>
                   <p>
-                    A travel-money app that keeps current and historical FX dates and
-                    sources explicit. The core conversion still works when optional AI,
-                    media, or enrichment providers are unavailable.
+                    A travel-money app with current and historical FX rates. It shows the
+                    source and effective date, and the basic conversion still works if
+                    optional AI or enrichment providers are down.
                   </p>
                   <a
                     href="https://github.com/MykolaDotsenko/cultural-currency-converter"
@@ -371,10 +364,9 @@
                     <span>React · TypeScript · Zod · PWA</span>
                   </div>
                   <p>
-                    A local-first PWA for keeping a shopping trip inside budget. Money is
-                    stored in integer minor units; persisted data is versioned; barcode, OCR,
-                    and on-device image recognition only suggest values until the shopper
-                    confirms them.
+                    A local-first shopping budget PWA. Money is stored in integer minor units,
+                    browser data is versioned, and barcode/OCR/image recognition only suggests
+                    a value until the shopper confirms it.
                   </p>
                   <a
                     href="https://github.com/MykolaDotsenko/shopping-budget-companion"
@@ -391,10 +383,9 @@
                     <span>Next.js · TypeScript · tRPC · Prisma</span>
                   </div>
                   <p>
-                    A railway booking case study where seat availability is tracked by
-                    route segment. Database rules protect against overbooking when requests
-                    arrive at the same time, and tests cover the booking flow and GTFS edge
-                    cases.
+                    A Finnish rail-booking demo where seat availability is tracked by route
+                    segment. A database constraint protects against two users booking the same
+                    segment at the same time.
                   </p>
                   <a
                     href="https://github.com/MykolaDotsenko/JunaLippu"
@@ -411,9 +402,8 @@
                     <span>React · GTFS/SIRI · PWA · Playwright</span>
                   </div>
                   <p>
-                    A transit PWA for Turku that keeps live, scheduled, stale, and unknown
-                    states separate. It also handles repeated stops, unreliable GPS,
-                    offline use, and the awkward timing cases around GTFS/SIRI data.
+                    A Turku transit PWA that deals with stale live data, repeated stops,
+                    weak GPS, offline use, and GTFS/SIRI timing edge cases.
                   </p>
                   <div class="project-links">
                     <a
@@ -440,8 +430,8 @@
                   </div>
                   <p>
                     A comparison tool for decisions with several criteria. Score, confidence,
-                    and sensitivity are shown separately, and AI only helps prepare inputs;
-                    the ranking itself is normal deterministic code.
+                    and sensitivity are shown separately. AI can help prepare the inputs,
+                    but ordinary code calculates the ranking.
                   </p>
                   <div class="project-links">
                     <a
@@ -466,33 +456,33 @@
             <section class="resume-section" aria-labelledby="approach-heading">
               <div class="section-heading">
                 <p class="section-label">Working style</p>
-                <h2 id="approach-heading">A few habits I rely on</h2>
+                <h2 id="approach-heading">How I tend to work</h2>
               </div>
 
               <div class="principle-grid">
                 <article>
-                  <h3>Start from the data</h3>
-                  <p>When something breaks in production, I prefer to reproduce it against the actual data and trace the flow before changing code.</p>
+                  <h3>Check the data first</h3>
+                  <p>If production data looks wrong, I try to reproduce it and trace the source before touching the implementation.</p>
                 </article>
                 <article>
-                  <h3>Be conservative with risky automation</h3>
-                  <p>If the system cannot distinguish two cases safely, I would rather keep an explicit review or unknown state than invent confidence.</p>
+                  <h3>Do not guess on identity</h3>
+                  <p>If two records cannot be matched safely, I would rather send the case to review than make a confident-looking bad merge.</p>
                 </article>
                 <article>
-                  <h3>Assume jobs will be retried</h3>
-                  <p>Syncs and important writes should be safe to run again. External input gets validated, and partial failures should not leave hidden corruption behind.</p>
+                  <h3>Make syncs safe to rerun</h3>
+                  <p>Imports and sync jobs should be able to run again after a partial failure without creating a second problem.</p>
                 </article>
                 <article>
-                  <h3>Keep the stack boring when possible</h3>
-                  <p>If a Django page or plain HTML/CSS is enough, I do not add another framework just to make the architecture look bigger.</p>
+                  <h3>Use the simple option when it is enough</h3>
+                  <p>If Django or plain HTML/CSS solves the problem, I do not add another service or framework just for the sake of it.</p>
                 </article>
               </div>
 
               <div class="product-lens">
-                <span>The kind of problems I enjoy</span>
+                <span>I enjoy</span>
                 <p>
-                  Work where the input is messy but the person using the product still needs a
-                  clear answer: what changed, which data can be trusted, and what to do next.
+                  Work where the data is messy but the person using the product still needs
+                  a clear answer about what changed and what they should do next.
                 </p>
               </div>
             </section>
@@ -500,10 +490,9 @@
             <section class="resume-section resume-section-last contact-section" aria-labelledby="contact-heading">
               <div>
                 <p class="section-label">Connect</p>
-                <h2 id="contact-heading">I’m most interested in backend, data, and operational software.</h2>
+                <h2 id="contact-heading">I’m interested in backend, data, and operational software.</h2>
                 <p class="contact-copy">
-                  Especially when the hard part is keeping data trustworthy across
-                  systems and turning it into a workflow people can rely on.
+                  Especially when several systems have to agree on the same business data.
                 </p>
               </div>
               <div class="contact-actions">
@@ -530,7 +519,7 @@
 
       <footer class="page-footer">
         <p>Mykola Dotsenko · Software Engineer</p>
-        <p>Python/Django · Backend · Data · AI Integrations</p>
+        <p>Python/Django · Backend · Data Integrations</p>
       </footer>
     </div>
   </body>
