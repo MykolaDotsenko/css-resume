@@ -21,14 +21,14 @@ test.beforeEach(async ({ page }) => {
 test("renders the recruiter-facing content without horizontal overflow", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Mykola Dotsenko" })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Production evidence, not just responsibilities." })
+    page.getByRole("heading", { name: "A few concrete numbers" })
   ).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Production engineering trajectory" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Recent software work" })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Projects that show engineering judgment" })
+    page.getByRole("heading", { name: "Selected projects" })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Engineering decisions under uncertainty" })
+    page.getByRole("heading", { name: "How I usually work" })
   ).toBeVisible();
   await expect(page.locator("#education-heading")).toBeVisible();
 
@@ -59,9 +59,9 @@ test("exposes the expected professional and flagship project destinations", asyn
 });
 
 test("keeps the current positioning visible in the primary scan path", async ({ page }) => {
-  await expect(page.getByText("Backend & data engineering for", { exact: false })).toBeVisible();
+  await expect(page.getByText("Python/Django backend, integrations,", { exact: false })).toBeVisible();
   await expect(page.getByText("~200k", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("Kivi, OviPro, and HubSpot reconciled into connected workflows.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Kivi, OviPro, and HubSpot in one reconciliation flow.", { exact: true })).toBeVisible();
   await expect(page.getByText("Python, Django, DRF, Wagtail", { exact: false })).toBeVisible();
 });
 
