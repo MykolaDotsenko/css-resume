@@ -61,7 +61,7 @@ test("exposes the expected professional and flagship project destinations", asyn
 test("keeps the current positioning visible in the primary scan path", async ({ page }) => {
   await expect(page.getByText("Backend & data engineering for", { exact: false })).toBeVisible();
   await expect(page.getByText("~200k", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("Kivi, OviPro, and HubSpot", { exact: false })).toBeVisible();
+  await expect(page.getByText("Kivi, OviPro, and HubSpot reconciled into connected workflows.", { exact: true })).toBeVisible();
   await expect(page.getByText("Python, Django, DRF, Wagtail", { exact: false })).toBeVisible();
 });
 
