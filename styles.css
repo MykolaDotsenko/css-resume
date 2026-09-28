@@ -1511,6 +1511,14 @@ h1 {
 }
 
 @media print {
+  body {
+    background: #fff;
+  }
+
+  .resume {
+    box-shadow: none;
+  }
+
   .resume::before,
   .hero::after,
   .portrait-shell::before,
