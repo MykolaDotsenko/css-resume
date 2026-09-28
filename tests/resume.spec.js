@@ -21,14 +21,14 @@ test.beforeEach(async ({ page }) => {
 test("renders the recruiter-facing content without horizontal overflow", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Mykola Dotsenko" })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "A few concrete numbers" })
+    page.getByRole("heading", { name: "Some numbers from production" })
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "Recent software work" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Selected projects" })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "How I usually work" })
+    page.getByRole("heading", { name: "A few habits I rely on" })
   ).toBeVisible();
   await expect(page.locator("#education-heading")).toBeVisible();
 
