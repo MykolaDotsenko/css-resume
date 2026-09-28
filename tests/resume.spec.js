@@ -21,14 +21,14 @@ test.beforeEach(async ({ page }) => {
 test("renders the recruiter-facing content without horizontal overflow", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Mykola Dotsenko" })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Some numbers from production" })
+    page.getByRole("heading", { name: "A few numbers" })
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "Recent software work" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Selected projects" })
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "A few habits I rely on" })
+    page.getByRole("heading", { name: "How I tend to work" })
   ).toBeVisible();
   await expect(page.locator("#education-heading")).toBeVisible();
 
@@ -65,7 +65,7 @@ test("exposes the expected professional and flagship project destinations", asyn
 test("keeps the current positioning visible in the primary scan path", async ({ page }) => {
   await expect(page.getByText("Python/Django backend, integrations,", { exact: false })).toBeVisible();
   await expect(page.getByText("~200k", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("Kivi, OviPro, and HubSpot in one reconciliation flow.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Kivi, OviPro, and HubSpot in the same CRM flow.", { exact: true })).toBeVisible();
   await expect(page.getByText("Python, Django, DRF, Wagtail", { exact: false })).toBeVisible();
 });
 
