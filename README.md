@@ -1,6 +1,6 @@
 # CSS Resume — Mykola Dotsenko
 
-A static resume page built with plain HTML and CSS.
+A static resume page built with HTML and CSS.
 
 **Live:** https://mykoladotsenko.github.io/css-resume/
 
@@ -8,22 +8,21 @@ A static resume page built with plain HTML and CSS.
 [LinkedIn](https://www.linkedin.com/in/mykola-dotsenko/) ·
 [GitHub](https://github.com/MykolaDotsenko)
 
-This repo started as an early CSS exercise. I kept the static setup and rebuilt the page around the work I do now instead of turning it into another framework demo.
+This repo started as a CSS exercise. I kept it static and replaced the old learning content with my current work.
 
-## What is on the page
+## What I work with
 
-My current work is mostly Python/Django backend and data work:
-
-- Django, DRF, Wagtail, PostgreSQL, SQL, and Django ORM
-- Kivi, OviPro, HubSpot, and other external integrations
+- Python, Django, DRF, Wagtail
+- PostgreSQL, SQL, Django ORM
+- Kivi, OviPro, HubSpot, and other APIs
 - CRM reconciliation and identity matching
-- synchronization and document workflows
-- search/query performance
-- production debugging
-- React, Next.js, TypeScript, JavaScript, and HTMX when the same feature needs frontend work
-- LLM-backed features where model output is checked by normal application logic
+- synchronization and document flows
+- search and query performance
+- React, Next.js, TypeScript, JavaScript, HTMX
+- Playwright, Vitest, Ruff, mypy, GitHub Actions
+- LLM-backed features with normal application checks around the output
 
-The resume includes a few concrete examples from Bo, including CRM work at roughly 200k-contact scale and one search path reduced from about 3.5 seconds to about 300 ms.
+The resume includes a few numbers from current work: roughly 200k contacts in the Kivi/OviPro/HubSpot CRM work and one search path reduced from about 3.5 seconds to about 300 ms.
 
 ## Projects shown
 
@@ -31,13 +30,13 @@ The resume includes a few concrete examples from Bo, including CRM work at rough
 
 **Python · Django · Wagtail · PostgreSQL**
 
-A household app where pantry, recipes, shopping, and recurring tasks share data instead of behaving like unrelated CRUD screens.
+A household app where pantry, recipes, shopping, and recurring tasks share data.
 
 ### [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter)
 
 **Django · PostgreSQL · HTMX · Redis**
 
-A travel-money app with current and historical FX rates. The core conversion still works when optional AI or enrichment providers are unavailable.
+A travel-money app with current and historical FX rates. The basic conversion still works if optional providers are unavailable.
 
 ### [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion)
 
@@ -49,13 +48,13 @@ A local-first shopping budget app with exact-money arithmetic, versioned browser
 
 **Next.js · TypeScript · tRPC · Prisma**
 
-A Finnish rail-booking demo with segment-level seat inventory and database protection against concurrent overbooking.
+A Finnish rail-booking demo with segment-level inventory and database protection against concurrent overbooking.
 
 ### [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures)
 
 **React · GTFS/SIRI · PWA · Playwright**
 
-A Turku transit PWA that deals with stale live data, repeated stops, poor GPS, offline use, and GTFS/SIRI timing edge cases.
+A Turku transit PWA that deals with stale live data, repeated stops, weak GPS, offline use, and timetable edge cases.
 
 [Live demo](https://mykoladotsenko.github.io/foli-live-departures/)
 
@@ -63,42 +62,37 @@ A Turku transit PWA that deals with stale live data, repeated stops, poor GPS, o
 
 **React · TypeScript · Zod · Vercel**
 
-A comparison tool that keeps score, confidence, and sensitivity separate. AI can help prepare inputs, but the ranking stays deterministic.
+A comparison tool where score, confidence, and sensitivity stay separate. AI can prepare inputs; regular code calculates the ranking.
 
 [Live demo](https://tradeoff-decision-lab.vercel.app/)
 
 ## Implementation
 
-There is no client-side state or form workflow here, so the site does not need React or another runtime framework.
+There is no application state on this page, so it stays plain HTML and CSS.
 
-It uses:
+It includes:
 
-- semantic HTML
-- responsive CSS
-- Grid and Flexbox
-- keyboard focus styles
-- reduced-motion and forced-colors support
-- A4 print rules
-- no runtime JavaScript
-- no runtime dependencies
+- responsive layout;
+- keyboard focus styles;
+- reduced-motion and forced-colors support;
+- A4 print rules;
+- no runtime JavaScript.
 
 ## Checks
 
-Static validation:
+Static checks:
 
 ```bash
 python scripts/check_site.py
 ```
 
-Browser, accessibility, and print tests:
+Browser and print tests:
 
 ```bash
 npm install
 npx playwright install chromium
 npm run test:e2e
 ```
-
-The Playwright suite checks desktop/mobile layout, important links and content, horizontal overflow, serious/critical axe violations, print styles, and A4 PDF generation.
 
 ## Local preview
 
@@ -115,4 +109,4 @@ http://127.0.0.1:8000/
 ## Author
 
 **Mykola Dotsenko**  
-Software Engineer — Python/Django · Backend · Data · Integrations
+Software Engineer — Python/Django · Backend · Data Integrations
