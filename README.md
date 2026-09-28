@@ -2,7 +2,7 @@
 
 A recruiter-facing, print-ready software engineering resume built with **semantic HTML and modern CSS only**.
 
-**Live site:** https://mykoladotsenko.github.io/My-CSS-CV/
+**Live site:** https://mykoladotsenko.github.io/css-resume/
 
 The repository started as an early CSS learning exercise. The current version keeps that constraint while turning the project into a focused engineering case study: high-signal content, responsive layout, accessibility, print output, browser verification, and no runtime JavaScript.
 
