@@ -1,48 +1,116 @@
 # CSS Resume — Mykola Dotsenko
 
-A recruiter-facing, print-ready software engineering resume built with **semantic HTML and modern CSS only**.
+**Recruiter-facing software engineering profile focused on Python/Django backend systems, data integrations, production reliability, and product judgment.**
 
 **Live site:** https://mykoladotsenko.github.io/css-resume/
 
-The repository started as an early CSS learning exercise. The current version keeps that constraint while turning the project into a focused engineering case study: high-signal content, responsive layout, accessibility, print output, browser verification, and no runtime JavaScript.
+[Full recruiter CV](https://mykoladotsenko.github.io/developer-profile/resume.html) ·
+[LinkedIn](https://www.linkedin.com/in/mykola-dotsenko/) ·
+[GitHub](https://github.com/MykolaDotsenko)
 
-## Product goal
+This repository started as an early CSS learning exercise. The current version keeps the static HTML/CSS constraint but turns the page into a high-signal recruiter surface rather than a generic portfolio template.
 
-The live page is intentionally optimized for a recruiter or hiring manager scanning quickly:
+## What the page communicates
 
-1. identity and engineering focus
-2. measurable production impact
-3. software-engineering trajectory
-4. selected projects
-5. technical strengths and education
-6. a direct path to GitHub or LinkedIn
+The primary scan path now emphasizes:
 
-Implementation commentary stays here in the README instead of competing with hiring information on the live page.
+1. **Backend/data specialization** rather than generic full-stack positioning.
+2. **Production evidence** — roughly 200k-record CRM/contact scale, Kivi/OviPro/HubSpot integrations, and measurable performance improvement.
+3. **Engineering judgment** — data ownership, ambiguity handling, idempotent/recoverable workflows, and evidence-driven debugging.
+4. **Full-product literacy** — React, Next.js, TypeScript, HTMX, accessibility, browser testing, and delivery experience remain visible without competing with the core backend narrative.
+5. **Domain differentiation** — earlier experience in agriculture, agribusiness, greenhouse/food production, accounting, and sales is framed as useful context for AgTech and operational software.
+6. **Current education** — MSc Software Engineering is clearly marked as in progress.
 
-## Why no framework?
+## Current positioning
 
-A resume is static content. React, Next.js, a design system, a state library, or a runtime animation layer would increase the maintenance surface without solving a product requirement.
+> **Software Engineer · Backend · Data · AI Integrations**
 
-The production page therefore has:
+Strongest areas:
+
+- Python / Django / Django REST Framework / Wagtail
+- PostgreSQL / SQL / Django ORM
+- multi-source data integrations
+- CRM reconciliation and identity resolution
+- idempotent and recoverable data flows
+- production debugging and reliability
+- REST APIs and provider boundaries
+- React / Next.js / TypeScript / HTMX
+- automated browser testing and accessibility
+- AI-enabled workflows with deterministic guardrails
+
+## Selected engineering work
+
+The live page now highlights projects that best represent current engineering depth rather than older learning-stage repositories.
+
+### [DomoNest](https://github.com/MykolaDotsenko/domonest)
+
+**Python · Django · Wagtail · PostgreSQL**
+
+Cross-domain household workflows, derived read models, database invariants, idempotent writes, recurrence, private owner-scoped state, and progressive enhancement.
+
+### [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter)
+
+**Django · PostgreSQL · HTMX · Redis**
+
+Explicit FX provenance/date semantics, provider boundaries, graceful degradation, optional AI explanation, runtime health checks, browser QA, and recovery tooling.
+
+### [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion)
+
+**React · TypeScript · Zod · PWA**
+
+Exact-money arithmetic, versioned persistence, offline behavior, barcode/OCR/on-device vision adapters, and explicit user-confirmation boundaries.
+
+### [JunaLippu](https://github.com/MykolaDotsenko/JunaLippu)
+
+**Next.js · TypeScript · tRPC · Prisma**
+
+Segment-aware railway inventory, concurrency-safe booking, owner-scoped reservations, integration tests, and GTFS edge-case handling.
+
+## Engineering principles represented
+
+The page intentionally makes several recurring engineering principles visible:
+
+- **Evidence before fixes** — reproduce and measure before changing behavior.
+- **Correctness over convenient guesses** — ambiguity stays explicit when automatic action would be unsafe.
+- **Recoverable systems** — important writes and synchronization paths should tolerate retry and partial failure.
+- **Proportional architecture** — use only the complexity justified by the product.
+- **AI as an interface layer** — deterministic business rules remain authoritative where correctness matters.
+
+A recurring product model across the portfolio is:
+
+```text
+messy real-world information
+        ↓
+structured state
+        ↓
+explicit uncertainty
+        ↓
+decision support
+        ↓
+clear next action
+```
+
+## Why no frontend framework here?
+
+A resume is static content. React, Next.js, a state library, or runtime animation layer would add maintenance surface without solving a real product requirement.
+
+The production page therefore uses:
 
 - semantic HTML5
 - modern CSS
 - CSS Grid and Flexbox
-- fluid typography with `clamp()`
-- CSS custom properties as design tokens
-- responsive breakpoints
-- `:focus-visible`
-- `prefers-reduced-motion`
-- forced-colors support
-- dedicated A4-oriented print rules
+- responsive layouts
+- accessible focus states
+- reduced-motion and forced-colors support
+- A4-oriented print rules
 - **zero runtime JavaScript**
-- **zero runtime dependencies**
+- **zero runtime application dependencies**
 
-Browser tooling exists only in development/CI.
+The implementation choice itself demonstrates one of the core principles: use the simplest architecture that fully serves the product.
 
 ## Quality strategy
 
-### Static invariants
+### Static checks
 
 ```bash
 python scripts/check_site.py
@@ -51,16 +119,15 @@ python scripts/check_site.py
 The zero-dependency checker validates:
 
 - one `<main>` and one `<h1>`
-- document language
-- viewport and description metadata
-- canonical URL and core social metadata
-- unique HTML IDs
+- document language and metadata
+- canonical/social metadata
+- unique IDs
 - local files and fragment links
 - image alternative text
 - safe external links
 - no forms or JavaScript runtime
 - print, focus-visible, reduced-motion, and forced-colors CSS
-- expected recruiter-facing sections
+- required recruiter-facing sections
 
 ### Browser, accessibility, and print checks
 
@@ -70,24 +137,17 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Playwright checks the page in desktop and mobile Chromium for:
+Playwright checks:
 
-- successful render
-- no page errors or console errors
+- desktop/mobile render
+- no page or console errors
 - no horizontal overflow
-- critical recruiter-facing content
-- expected external project/profile links
+- current recruiter-facing positioning
+- professional/profile links
+- flagship project links
 - WCAG A/AA serious/critical violations via axe
 - print media behavior
 - successful A4 PDF generation
-
-These are development-only dependencies. They do not change the runtime architecture of the site.
-
-## CI
-
-GitHub Actions runs static validation and browser/a11y/print checks on pull requests and pushes to `main`.
-
-The repository also contains a GitHub Pages deployment workflow for the static production assets.
 
 ## Project structure
 
@@ -110,26 +170,23 @@ The repository also contains a GitHub Pages deployment workflow for the static p
 └── README.md
 ```
 
-## Run locally
-
-No application installation is required:
+## Local preview
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Open:
 
-Install npm packages only when running the browser verification suite.
+```text
+http://127.0.0.1:8000/
+```
 
 ## Print / PDF
 
-Use the browser's print command and choose **Save as PDF**. Screen-only actions are removed in print media and the layout switches to an A4-oriented presentation.
+Use the browser print dialog and choose **Save as PDF**. Screen-only calls to action are hidden and the layout switches to a compact A4-oriented presentation.
 
-## Engineering rationale
+## Author
 
-The useful signal in this repository is not feature count. It is proportionality:
-
-> Use the simplest architecture that fully satisfies the product, then make that implementation clear, accessible, verifiable, and maintainable.
-
-The live surface serves recruiters. The README and tests provide the engineering evidence.
+**Mykola Dotsenko**  
+Software Engineer — Python/Django · Backend · Data · AI Integrations
