@@ -20,21 +20,32 @@ test.beforeEach(async ({ page }) => {
 
 test("renders the recruiter-facing content without horizontal overflow", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Mykola Dotsenko" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Production outcomes" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Software engineering trajectory" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Projects that show how I engineer" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Production evidence, not just responsibilities." })
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Production engineering trajectory" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Projects that show engineering judgment" })
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Engineering decisions under uncertainty" })
+  ).toBeVisible();
   await expect(page.locator("#education-heading")).toBeVisible();
 
-  const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+  const overflows = await page.evaluate(
+    () => document.documentElement.scrollWidth > window.innerWidth + 1
+  );
   expect(overflows).toBe(false);
 });
 
-test("exposes the expected professional and project destinations", async ({ page }) => {
+test("exposes the expected professional and flagship project destinations", async ({ page }) => {
   const expected = [
     "https://github.com/MykolaDotsenko",
     "https://www.linkedin.com/in/mykola-dotsenko/",
-    "https://github.com/MykolaDotsenko/DjangoMovieProject",
-    "https://github.com/MykolaDotsenko/reaktor-mykola",
+    "https://mykoladotsenko.github.io/developer-profile/resume.html",
+    "https://github.com/MykolaDotsenko/domonest",
+    "https://github.com/MykolaDotsenko/cultural-currency-converter",
+    "https://github.com/MykolaDotsenko/shopping-budget-companion",
     "https://github.com/MykolaDotsenko/JunaLippu",
   ];
 
@@ -45,6 +56,13 @@ test("exposes the expected professional and project destinations", async ({ page
   for (const url of expected) {
     expect(hrefs).toContain(url);
   }
+});
+
+test("keeps the current positioning visible in the primary scan path", async ({ page }) => {
+  await expect(page.getByText("Backend & data engineering for", { exact: false })).toBeVisible();
+  await expect(page.getByText("~200k", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("Kivi, OviPro, and HubSpot", { exact: false })).toBeVisible();
+  await expect(page.getByText("Python, Django, DRF, Wagtail", { exact: false })).toBeVisible();
 });
 
 test("has no serious or critical WCAG A/AA violations", async ({ page }) => {
