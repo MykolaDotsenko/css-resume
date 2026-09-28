@@ -47,6 +47,10 @@ test("exposes the expected professional and flagship project destinations", asyn
     "https://github.com/MykolaDotsenko/cultural-currency-converter",
     "https://github.com/MykolaDotsenko/shopping-budget-companion",
     "https://github.com/MykolaDotsenko/JunaLippu",
+    "https://mykoladotsenko.github.io/foli-live-departures/",
+    "https://github.com/MykolaDotsenko/foli-live-departures",
+    "https://tradeoff-decision-lab.vercel.app/",
+    "https://github.com/MykolaDotsenko/tradeoff-decision-lab",
   ];
 
   const hrefs = await page.locator("a").evaluateAll((links) =>
